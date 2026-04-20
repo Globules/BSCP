@@ -5,7 +5,7 @@
 - [❌] SQL injection
 - [❌] Authentication
 - [❌] Path traversal
-- [❌] Command injection
+- [✅] Command injection
 - [❌] Business logic vulnerabilities
 - [✅] Information disclosure
 - [✅] Access control
