@@ -6,7 +6,10 @@ You can log in to your own account using the following credentials: wiener:peter
 
 ## Notes
 
-
+- /admin
+- /login
+- Stay-Logged-In functionality
+- Possibility to leave a comment on a post
 
 ## Resume
 
