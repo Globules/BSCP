@@ -4,13 +4,13 @@
 
 - [❌] SQL injection
 - [❌] Authentication
-- [❌] Path traversal
+- [✅] Path traversal
 - [✅] Command injection
-- [❌] Business logic vulnerabilities
+- [⏳] Business logic vulnerabilities
 - [✅] Information disclosure
 - [✅] Access control
-- [❌] File upload vulnerabilities
-- [❌] Race conditions
+- [⏳] File upload vulnerabilities
+- [⏳] Race conditions
 - [✅] Server-side request forgery (SSRF)
 - [✅] XXE injection
 - [✅] NoSQL injection
