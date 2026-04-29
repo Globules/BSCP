@@ -2,14 +2,14 @@
 
 ## Server-side topics
 
-- [❌] SQL injection
-- [❌] Authentication
+- [⏳] SQL injection
+- [⏳] Authentication
 - [✅] Path traversal
 - [✅] Command injection
 - [⏳] Business logic vulnerabilities
 - [✅] Information disclosure
 - [✅] Access control
-- [⏳] File upload vulnerabilities
+- [✅] File upload vulnerabilities
 - [⏳] Race conditions
 - [✅] Server-side request forgery (SSRF)
 - [✅] XXE injection
