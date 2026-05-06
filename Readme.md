@@ -3,7 +3,7 @@
 ## Server-side topics
 
 - [⏳] SQL injection
-- [⏳] Authentication
+- [✅] Authentication
 - [✅] Path traversal
 - [✅] Command injection
 - [⏳] Business logic vulnerabilities
