@@ -6,7 +6,7 @@
 - [✅] Authentication
 - [✅] Path traversal
 - [✅] Command injection
-- [⏳] Business logic vulnerabilities
+- [✅] Business logic vulnerabilities
 - [✅] Information disclosure
 - [✅] Access control
 - [✅] File upload vulnerabilities
