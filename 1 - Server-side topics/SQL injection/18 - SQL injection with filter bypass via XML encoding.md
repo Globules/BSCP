@@ -113,7 +113,7 @@ carlos~1wotidhankvx4wr4g2nu
 Credentials :
 
 ```text
-administrator:password123
+administrator:dq54wlspwniqntq6wezo
 ```
 
 Log in with the administrator account to solve the lab.
