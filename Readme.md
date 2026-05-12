@@ -10,7 +10,7 @@
 - [✅] Information disclosure
 - [✅] Access control
 - [✅] File upload vulnerabilities
-- [⏳] Race conditions
+- [✅] Race conditions
 - [✅] Server-side request forgery (SSRF)
 - [✅] XXE injection
 - [✅] NoSQL injection
