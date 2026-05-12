@@ -2,7 +2,7 @@
 
 ## Server-side topics
 
-- [⏳] SQL injection
+- [✅] SQL injection
 - [✅] Authentication
 - [✅] Path traversal
 - [✅] Command injection
