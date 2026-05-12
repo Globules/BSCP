@@ -95,14 +95,18 @@ Content-Type: application/xml
 </stockCheck>
 ```
 
-The response returns usernames and passwords separated by `~`.
+The response returns usernames and passwords separated by `~` :
 
-Example:
+```http
+HTTP/2 200 OK
+Content-Type: text/plain; charset=utf-8
+X-Frame-Options: SAMEORIGIN
+Content-Length: 100
 
-```text
-administrator~password123
-wiener~peter
-carlos~montoya
+wiener~fa0uge5j64yzberllm01
+administrator~dq54wlspwniqntq6wezo
+370 units
+carlos~1wotidhankvx4wr4g2nu
 ```
 
 
