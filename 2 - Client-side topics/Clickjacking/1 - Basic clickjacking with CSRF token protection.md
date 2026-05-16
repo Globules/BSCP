@@ -12,6 +12,10 @@ The victim will be using Chrome so test your exploit on that browser.
 
 ## Notes
 
+- /login
+- Possibility to leave a comment
+- Exploit Server
+
 
 
 ## Resume
