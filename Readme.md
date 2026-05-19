@@ -21,10 +21,10 @@
 
 ## Client-side topics
 
-- [⌛] Cross-site scripting (XSS)
+- [✅] Cross-site scripting (XSS)
 - [⌛] Cross-site request forgery (CSRF)
-- [⌛] Cross-origin resource sharing (CORS)
-- [✅] Clickjacking
+- [✅] Cross-origin resource sharing (CORS)
+- [⌛] Clickjacking
 - [⌛] DOM-based vulnerabilities
 - [✅] WebSockets
 

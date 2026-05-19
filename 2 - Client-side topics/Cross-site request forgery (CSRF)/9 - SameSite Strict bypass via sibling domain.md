@@ -12,10 +12,14 @@ Make sure you fully audit all of the available attack surface. Keep an eye out f
 
 ## Notes
 
-
+- Exploit server
+- /login
+- /admin
+- /chat (ws)
 
 ## Resume
 
 
 
 ## Solve
+
