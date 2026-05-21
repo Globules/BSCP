@@ -24,8 +24,8 @@
 - [✅] Cross-site scripting (XSS)
 - [⌛] Cross-site request forgery (CSRF)
 - [✅] Cross-origin resource sharing (CORS)
-- [⌛] Clickjacking
-- [⌛] DOM-based vulnerabilities
+- [✅] Clickjacking
+- [✅] DOM-based vulnerabilities
 - [✅] WebSockets
 
 ---
