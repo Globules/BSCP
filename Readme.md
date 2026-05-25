@@ -34,12 +34,12 @@
 
 - [⌛] Insecure deserialization
 - [⌛] Web LLM attacks
-- [⌛] GraphQL API vulnerabilities
+- [✅] GraphQL API vulnerabilities
 - [✅] Server-side template injection
 - [⌛] Web cache poisoning
 - [⌛] HTTP Host header attacks
 - [⌛] HTTP request smuggling
-- [✅] OAuth authentication
+- [⌛] OAuth authentication
 - [⌛] JWT attacks
 - [⌛] Prototype pollution
 - [⌛] Essential skills
