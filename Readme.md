@@ -37,12 +37,12 @@
 - [✅] GraphQL API vulnerabilities
 - [✅] Server-side template injection
 - [⌛] Web cache poisoning
-- [⌛] HTTP Host header attacks
+- [✅] HTTP Host header attacks
 - [⌛] HTTP request smuggling
 - [⌛] OAuth authentication
 - [⌛] JWT attacks
 - [⌛] Prototype pollution
-- [⌛] Essential skills
+- [✅] Essential skills
 
 ---
 
