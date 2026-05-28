@@ -12,19 +12,6 @@ We recommend familiarizing yourself with how to work with JWTs in Burp Suite bef
 
 ## Notes
 
-- /admin
-- Search page
-- Possibility to leave a comment on a post
-
-Oui, tu as raison : pour ce type de writeup, il faut garder une voix neutre et descriptive, pas écrire à la première personne. Voici une version propre, au bon format, avec tes étapes et tes requêtes intégrées.
-
-text
-## JWT authentication bypass via path traversal to `/dev/null`
-
-This lab uses a JWT-based session mechanism. To solve it, modify the JWT so that the server resolves the signing key from `/dev/null`, then use a symmetric key whose secret is a Base64-encoded null byte. After that, access the admin panel and delete `carlos`.
-
-## Notes
-
 - JWT in the session cookie.
 - `/admin`
 - `/admin/delete?username=carlos`

@@ -16,19 +16,6 @@ We recommend familiarizing yourself with how to work with JWTs in Burp Suite bef
 - Search page Found
 - Possibility to leave a comment on a post
 
-text
-## JWT authentication bypass via embedded JWK
-
-This lab uses a JWT-based session mechanism. To solve it, modify the token so it identifies you as `administrator`, embed your own RSA public key in the JWT header, then use the forged token to access the admin panel and delete `carlos`.
-
-You can log in using your own account.
-
-## Notes
-
-- /admin
-- Search page
-- Possibility to leave a comment on a post
-
 ## Resume
 
 1. Log in as your own user.
