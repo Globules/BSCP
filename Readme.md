@@ -40,7 +40,7 @@
 - [✅] HTTP Host header attacks
 - [⌛] HTTP request smuggling
 - [✅] OAuth authentication
-- [⌛] JWT attacks
+- [✅] JWT attacks
 - [⌛] Prototype pollution
 - [✅] Essential skills
 
