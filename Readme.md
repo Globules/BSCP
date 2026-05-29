@@ -33,7 +33,7 @@
 ## Advanced topics
 
 - [✅] Insecure deserialization
-- [⌛] Web LLM attacks
+- [✅] Web LLM attacks
 - [✅] GraphQL API vulnerabilities
 - [✅] Server-side template injection
 - [⌛] Web cache poisoning
