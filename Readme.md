@@ -41,7 +41,7 @@
 - [⌛] HTTP request smuggling
 - [✅] OAuth authentication
 - [✅] JWT attacks
-- [⌛] Prototype pollution
+- [✅] Prototype pollution
 - [✅] Essential skills
 
 ---

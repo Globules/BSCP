@@ -26,15 +26,11 @@ Common methodology:
   - Django (`settings`, `debug`)
   - Handlebars prototype / constructor abuse
 
----
-
 ## Link
 
 ### BSCP Academy
 
 - [Server-side template injection](https://portswigger.net/web-security/server-side-template-injection)
-
----
 
 ### BSCP Labs (PortSwigger Web Security Academy)
 
