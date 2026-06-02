@@ -36,7 +36,7 @@
 - [✅] Web LLM attacks
 - [✅] GraphQL API vulnerabilities
 - [✅] Server-side template injection
-- [⌛] Web cache poisoning
+- [✅] Web cache poisoning
 - [✅] HTTP Host header attacks
 - [⌛] HTTP request smuggling
 - [✅] OAuth authentication
