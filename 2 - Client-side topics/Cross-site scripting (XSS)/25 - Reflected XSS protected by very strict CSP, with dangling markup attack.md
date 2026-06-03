@@ -1,4 +1,4 @@
-## Exploiting XSS to bypass CSRF defenses
+## Reflected XSS protected by very strict CSP, with dangling markup attack
 
 This lab contains a stored XSS vulnerability in the blog comments function. To solve the lab, exploit the vulnerability to steal a CSRF token, which you can then use to change the email address of someone who views the blog post comments.
 

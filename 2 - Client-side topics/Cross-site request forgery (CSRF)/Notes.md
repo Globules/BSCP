@@ -1,69 +1,62 @@
-## Labs tips
+## CSRF labs tips
 
-Every XSS lab generally contains:
+CSRF labs usually revolve around one core idea: the server trusts a request that *looks legitimate* because it comes with cookies, even though the user didn’t intend to trigger it.
 
-- Reflected input
-- Stored user content
-- DOM manipulation
-- JavaScript sinks:
-  - `innerHTML`
-  - `document.write`
-  - `eval`
-  - `location.search`
-- Common injection points:
-  - Search parameters
-  - Comments
-  - HTTP headers
-  - URL fragments
+You’ll typically see:
 
-Common files and endpoints:
+- State-changing endpoints without proper protection
+  - `/my-account/change-email`
+  - `/my-account/delete`
+  - `/transfer`
+- Session-based authentication (cookies automatically sent by the browser)
+- Missing or weak CSRF defenses:
+  - No CSRF token
+  - Token not validated properly
+  - Token not tied to session
+- Referer / Origin-based validation (often flawed)
+- SameSite cookie behavior:
+  - `Lax`, `Strict`, or missing entirely
+- OAuth / SSO flows that refresh session cookies
+- Cross-site WebSocket or sibling domain trust issues (advanced chaining)
 
-- `/search`
-- `/post/comment`
-- `/my-account`
-- `/resources/js/*.js`
+Common exploitation patterns:
+
+- Auto-submitted HTML forms (`document.forms[0].submit()`)
+- Forced navigation (`window.location`, `window.open`)
+- Cookie refresh tricks (OAuth or login endpoints)
+- Referer manipulation via:
+  - `history.pushState`
+  - `<meta name="referrer">`
+  - `Referrer-Policy`
+- Method confusion (GET/POST overrides depending on backend)
+- Exploiting SameSite Lax timing window (navigation-based POST acceptance)
+- Chaining with XSS or sibling domains to bypass cookie restrictions
+
+Common injection / delivery points:
+
+- Exploit server (PortSwigger)
+- `<form action=... method=POST>`
+- JavaScript redirects
+- Hidden inputs
+- URL parameters (for GET-based CSRF or method override)
+- Popups or user interaction handlers (`onclick`)
 
 ## Link
 
 ### BSCP Academy
 
-- [Cross-site scripting (XSS)](https://portswigger.net/web-security/cross-site-scripting)
+- [Cross-Site Request Forgery (CSRF)](https://portswigger.net/web-security/csrf)
 
 ### BSCP Labs
 
-- [Reflected XSS into HTML context with nothing encoded](https://portswigger.net/web-security/cross-site-scripting/reflected/lab-html-context-nothing-encoded)
-- [Stored XSS into HTML context with nothing encoded](https://portswigger.net/web-security/cross-site-scripting/stored/lab-html-context-nothing-encoded)
-- [DOM XSS in `document.write` sink using source `location.search`](https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-document-write-sink)
-- [DOM XSS in `innerHTML` sink using source `location.search`](https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-innerhtml-sink)
-- [DOM XSS in jQuery anchor `href` attribute sink using `location.search`](https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-jquery-anchor-href-attribute-sink)
-- [Reflected XSS into attribute with angle brackets HTML-encoded](https://portswigger.net/web-security/cross-site-scripting/contexts/lab-attribute-angle-brackets-html-encoded)
-- [Stored XSS into anchor `href` attribute with double quotes HTML-encoded](https://portswigger.net/web-security/cross-site-scripting/contexts/lab-href-attribute-double-quotes-html-encoded)
-- [Reflected XSS into a JavaScript string with angle brackets HTML encoded](https://portswigger.net/web-security/cross-site-scripting/contexts/lab-javascript-string-angle-brackets-html-encoded)
-- [DOM XSS in jQuery selector sink using a hashchange event](https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-jquery-selector-hash-change-event)
-- [Reflected XSS into HTML context with most tags and attributes blocked](https://portswigger.net/web-security/cross-site-scripting/contexts/lab-most-tags-and-attributes-blocked)
-- [Reflected XSS into HTML context with all tags blocked except custom ones](https://portswigger.net/web-security/cross-site-scripting/contexts/lab-all-tags-blocked-except-custom)
-- [Reflected XSS with some SVG markup allowed](https://portswigger.net/web-security/cross-site-scripting/contexts/lab-some-svg-markup-allowed)
-- [Reflected XSS in canonical link tag](https://portswigger.net/web-security/cross-site-scripting/contexts/lab-canonical-link-tag)
-- [Reflected XSS into a JavaScript string with single quote and backslash escaped](https://portswigger.net/web-security/cross-site-scripting/contexts/lab-javascript-string-single-quote-backslash-escaped)
-- [Reflected XSS into a JavaScript string with angle brackets and double quotes HTML-encoded and single quotes escaped](https://portswigger.net/web-security/cross-site-scripting/contexts/lab-javascript-string-angle-brackets-double-quotes-html-encoded-single-quotes-escaped)
-- [Stored XSS into `onclick` event with angle brackets and double quotes HTML-encoded and single quotes and backslash escaped](https://portswigger.net/web-security/cross-site-scripting/contexts/lab-onclick-event-angle-brackets-double-quotes-single-quotes-backslash-escaped)
-- [Reflected XSS into template literal with angle brackets, single, double quotes, backslash and backticks Unicode-escaped](https://portswigger.net/web-security/cross-site-scripting/contexts/lab-template-literal-angle-brackets-single-double-quotes-backslash-backticks-escaped)
-- [Exploiting cross-site scripting to steal cookies](https://portswigger.net/web-security/cross-site-scripting/exploiting/lab-stealing-cookies)
-- [Exploiting cross-site scripting to capture passwords](https://portswigger.net/web-security/cross-site-scripting/exploiting/lab-capturing-passwords)
-- [Exploiting XSS to bypass CSRF defenses](https://portswigger.net/web-security/cross-site-scripting/exploiting/lab-perform-csrf)
-- [Reflected DOM XSS](https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-dom-xss-reflected)
-- [Stored DOM XSS](https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-dom-xss-stored)
-- [DOM XSS using web messages](https://portswigger.net/web-security/dom-based/controlling-the-web-message-source/lab-dom-xss-using-web-messages)
-- [DOM XSS using web messages and JSON.parse](https://portswigger.net/web-security/dom-based/controlling-the-web-message-source/lab-dom-xss-using-web-messages-and-json-parse)
-- [DOM-based AngularJS sandbox escape](https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-angularjs-sandbox-escape)
-- [Reflected XSS with AngularJS sandbox escape and CSP](https://portswigger.net/web-security/cross-site-scripting/content-security-policy/lab-angularjs-csp-bypass)
-- [Reflected XSS protected by CSP with nonce](https://portswigger.net/web-security/cross-site-scripting/content-security-policy/lab-csp-bypass)
-- [Reflected XSS with event handlers and `href` attributes blocked](https://portswigger.net/web-security/cross-site-scripting/contexts/lab-event-handlers-and-href-attributes-blocked)
-- [Stored XSS in blog comments](https://portswigger.net/web-security/cross-site-scripting/stored/lab-comments)
-- [Reflected XSS in search functionality](https://portswigger.net/web-security/cross-site-scripting/reflected/lab-search-functionality)
-
-### Other resources
-
-- [XSS Cheat Sheet - PortSwigger](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)
-- [OWASP XSS Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)
-- [MDN - Cross-site scripting (XSS)](https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting)
+- [CSRF vulnerability with no defenses](https://portswigger.net/web-security/csrf/lab-no-defenses)
+- [CSRF where token validation depends on request method](https://portswigger.net/web-security/csrf/bypassing-token-validation/lab-token-validation-depends-on-request-method)
+- [CSRF where token is not tied to user session](https://portswigger.net/web-security/csrf/bypassing-token-validation/lab-token-not-tied-to-session)
+- [CSRF where token is tied to non-session cookie](https://portswigger.net/web-security/csrf/bypassing-token-validation/lab-token-tied-to-non-session-cookie)
+- [CSRF where token is duplicated in cookie](https://portswigger.net/web-security/csrf/bypassing-token-validation/lab-token-duplicated-in-cookie)
+- [SameSite Lax bypass via method override](https://portswigger.net/web-security/csrf/bypassing-samesite-restrictions/lab-method-override)
+- [SameSite Strict bypass via client-side redirect](https://portswigger.net/web-security/csrf/bypassing-samesite-restrictions/lab-client-side-redirect)
+- [SameSite Strict bypass via sibling domain](https://portswigger.net/web-security/csrf/bypassing-samesite-restrictions/lab-sibling-domain)
+- [SameSite Lax bypass via cookie refresh](https://portswigger.net/web-security/csrf/bypassing-samesite-restrictions/lab-cookie-refresh)
+- [CSRF where Referer validation depends on header being present](https://portswigger.net/web-security/csrf/bypassing-referer-based-defenses/lab-referer-validation-depends-on-header-present)
+- [CSRF with broken Referer validation](https://portswigger.net/web-security/csrf/bypassing-referer-based-defenses/lab-broken-referer-validation)
