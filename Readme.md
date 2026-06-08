@@ -38,7 +38,7 @@
 - [✅] Server-side template injection
 - [✅] Web cache poisoning
 - [✅] HTTP Host header attacks
-- [⌛] HTTP request smuggling
+- [✅] HTTP request smuggling
 - [✅] OAuth authentication
 - [✅] JWT attacks
 - [✅] Prototype pollution
