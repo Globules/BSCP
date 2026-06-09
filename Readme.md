@@ -48,5 +48,4 @@
 
 ## Other
 
-- [❌] Create cheat sheet
-- [❌] Create Exam cheat sheet
+- [⏳] Create Exam cheat sheet
