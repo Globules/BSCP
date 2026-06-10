@@ -21,6 +21,7 @@ It contains:
 - Exam notes
 - Practical attack workflows
 - Burp Suite methodology
+- Ressources for the labs and the exam (payload, tools, wordlist..)
 
 The goal of this repository is to centralize everything required to efficiently prepare for the BSCP exam and improve practical web exploitation skills.
 ---
